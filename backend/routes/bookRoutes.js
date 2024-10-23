@@ -1,6 +1,6 @@
 import express from 'express';
 
-import bookControllers from '../controllers/book.js';
+import bookControllers from '../controllers/bookControllers.js';
 
 const { getAllBooks, getBook, createBook, updateBook, deleteBook } =
     bookControllers;

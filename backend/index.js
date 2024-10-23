@@ -1,7 +1,7 @@
-import cors from 'cors';
-import dotenv from 'dotenv';
 import express from 'express';
+import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 // import db connection
 import connectToDB from './config/db.js';
@@ -10,8 +10,8 @@ import connectToDB from './config/db.js';
 import logger from './middleware/logger.js';
 
 // import routes
-import userRoutes from './routes/user.js';
-import bookRoutes from './routes/book.js';
+import userRoutes from './routes/userRoutes.js';
+import bookRoutes from './routes/bookRoutes.js';
 
 // load environment variables
 dotenv.config();
