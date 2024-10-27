@@ -36,7 +36,7 @@ const userControllers = {
                 });
                 await newUser.save();
 
-                res.status(200).json(newUser);
+                res.status(201).json(newUser);
             } else {
                 res.status(400).json({ message: 'Invalid email or password' });
             }
@@ -70,9 +70,13 @@ const userControllers = {
                     //set cookies
                     res.cookie('token', token, { httpOnly: true });
 
-                    res.status(200).json({
-                        message: 'User logged successfully'
-                    });
+                    res.status(200).json({ userExists });
+                } else {
+                    return res
+                        .status(400)
+                        .json({
+                            message: `Invalid credentials, please try again`
+                        });
                 }
             });
         } catch (err) {
